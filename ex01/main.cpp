@@ -60,6 +60,9 @@ int main() {
         forms[0] = Form("form150", 150, 150);
         forms[1] = Form("form100", 100, 150);
         forms[2] = Form("form1", 1, 150);
+        for (int j = 0; j < 3; j += 1) {
+            std::cout << forms[j] << std::endl;
+        }
 
         say("[ Sign. ]");
         say("[ yo150: success, fail, fail ]");
