@@ -11,6 +11,8 @@ class Bureaucrat;
 
 class Form {
     public:
+        virtual ~Form();
+
         class GradeTooHighException: public std::runtime_error {
             public:
                 GradeTooHighException(const char *_message);
@@ -45,7 +47,6 @@ class Form {
             int min_grade_to_sign,
             int min_grade_to_execute
         );
-        virtual ~Form();
         Form(const Form &from);
         Form& operator=(const Form &rhs);
 
