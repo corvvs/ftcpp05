@@ -22,9 +22,9 @@ void  test(
             << std::endl
             << std::endl;
         OfficeBlock ob(
-            new Intern(intern),
-            new Bureaucrat(signer),
-            new Bureaucrat(executor)
+            &intern,
+            &signer,
+            &executor
         );
         ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
         say("[ ** Shrubbery, 145 to sign, 137 to exec ** ]");
@@ -65,12 +65,35 @@ int main() {
     test(it3, crat50, crat1);
 
 
-    say("[ Blank Test ]");
     try {
+        say("[ Blank Test ]");
         OfficeBlock ob;
         // OfficeBlock ob2(ob); // error: calling a private constructor of class 'OfficeBlock'
         OfficeBlock ob3;
         // ob3 = ob; // error: 'operator=' is a private member of 'OfficeBlock'
+
+        ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
+        say("[ ** Shrubbery, 145 to sign, 137 to exec ** ]");
+        ob.doBureaucracy("ShrubberyCreationForm", "42Tokyo");
+        say("[ ** Robotomy, 72 to sign, 45 to exec ** ]");
+        ob.doBureaucracy("RobotomyRequestForm", "42Tokyo");
+        say("[ ** Pardon, 25 to sign, 5 to exec ** ]");
+        ob.doBureaucracy("PresidentialPardonForm", "42Tokyo");
+
+        say("[ Fill Test ]");
+        std::cout
+            << ob.getIntern() << " "
+            << ob.getSigner() << " "
+            << ob.getExecutor()
+            << std::endl;
+        ob.setIntern(&it);
+        ob.setSigner(&crat1);
+        ob.setExecutor(&crat1);
+        std::cout
+            << ob.getIntern() << " "
+            << ob.getSigner() << " "
+            << ob.getExecutor()
+            << std::endl;
 
         ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
         say("[ ** Shrubbery, 145 to sign, 137 to exec ** ]");

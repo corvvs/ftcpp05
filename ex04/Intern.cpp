@@ -59,9 +59,10 @@ Form*   Intern::makeForm(
             return NULL;
     }
     std::cout
-        << Constants::kTextWarning
+        << Constants::kTextInfo
         << "[" << this << "] "
         << "A sleepy intern created <" << form_name << ">"
+        << ", for <" << target_name << "> as a target"
         << Constants::kTextReset << std::endl;
     return concrete;
 }

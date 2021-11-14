@@ -29,9 +29,7 @@ OfficeBlock::OfficeBlock(
 }
 
 OfficeBlock::~OfficeBlock() {
-    delete intern_;
-    delete signer_;
-    delete executor_;
+    // OfficeBlock doesn't delete.
     std::cout
         << Constants::kTextLifeCycle
         << "[" << this << "] "
@@ -60,6 +58,32 @@ OfficeBlock&    OfficeBlock::operator=(const OfficeBlock &rhs) {
         << "assignation of OfficeBlock is wrong"
         << Constants::kTextReset << std::endl;
     return *this;
+}
+
+const Intern*       OfficeBlock::getIntern(void) const {
+    return intern_;
+}
+
+const Bureaucrat*   OfficeBlock::getSigner(void) const {
+    return signer_;
+}
+
+const Bureaucrat*   OfficeBlock::getExecutor(void) const {
+    return executor_;
+}
+
+
+void                OfficeBlock::setIntern(Intern* intern) {
+    delete intern_;
+    intern_ = intern;
+}
+
+void                OfficeBlock::setSigner(Bureaucrat* crat) {
+    signer_ = crat;
+}
+
+void                OfficeBlock::setExecutor(Bureaucrat* crat) {
+    executor_ = crat;
 }
 
 void    OfficeBlock::doBureaucracy(
