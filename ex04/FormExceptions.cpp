@@ -18,5 +18,5 @@ Form::ExecuteWithoutSignedException::ExecuteWithoutSignedException(const char *_
     std::runtime_error(_message) {}
 
 const char* Form::ExecuteWithoutSignedException::what() const _NOEXCEPT {
-    return "Form: Attemted to execute without sign.";
+    return "Form: Attempted to execute without sign.";
 }
