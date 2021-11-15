@@ -18,7 +18,7 @@ CentralBureaucracy::CentralBureaucracy(const CentralBureaucracy &from):
 }
 
 CentralBureaucracy& CentralBureaucracy::operator=(const CentralBureaucracy &rhs) {
-    if (this ==  &rhs) {
+    if (this == &rhs) {
         return *this;
     }
     StringList *temp = rhs.target_queue_ ? new StringList(*rhs.target_queue_) : NULL;

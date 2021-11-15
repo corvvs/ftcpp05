@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <new>
 # include "Constants.hpp"
 
 class StringList {
@@ -23,6 +24,7 @@ class StringList {
 
         const std::string   str_;
         StringList*         next_;
+        bool                no_delete_recursive_;
 };
 
 #endif

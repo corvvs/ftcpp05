@@ -7,7 +7,7 @@ OfficeBlock::OfficeBlock():
 {
     std::cout
         << Constants::kTextLifeCycle
-        << "[" << this << "] "
+        << "[" << this << ":OfficeBlock] "
         << "a blank OfficeBlock has been built"
         << Constants::kTextReset << std::endl;
 }
@@ -23,7 +23,7 @@ OfficeBlock::OfficeBlock(
 {
     std::cout
         << Constants::kTextLifeCycle
-        << "[" << this << "] "
+        << "[" << this << ":OfficeBlock] "
         << "an OfficeBlock has been built"
         << Constants::kTextReset << std::endl;
 }
@@ -32,7 +32,7 @@ OfficeBlock::~OfficeBlock() {
     // OfficeBlock doesn't delete.
     std::cout
         << Constants::kTextLifeCycle
-        << "[" << this << "] "
+        << "[" << this << ":~OfficeBlock] "
         << "a blank OfficeBlock has been imploded. The world is fragile."
         << Constants::kTextReset << std::endl;
 }
@@ -45,7 +45,7 @@ OfficeBlock::OfficeBlock(const OfficeBlock &from):
     (void)from;
     std::cout
         << Constants::kTextError
-        << "[" << this << "] "
+        << "[" << this << ":OfficeBlock] "
         << "copy of OfficeBlock is wrong"
         << Constants::kTextReset << std::endl;
 }
@@ -54,7 +54,7 @@ OfficeBlock&    OfficeBlock::operator=(const OfficeBlock &rhs) {
     (void)rhs;
     std::cout
         << Constants::kTextError
-        << "[" << this << "] "
+        << "[" << this << ":OfficeBlock::=] "
         << "assignation of OfficeBlock is wrong"
         << Constants::kTextReset << std::endl;
     return *this;
@@ -71,7 +71,6 @@ const Bureaucrat*   OfficeBlock::getSigner(void) const {
 const Bureaucrat*   OfficeBlock::getExecutor(void) const {
     return executor_;
 }
-
 
 void                OfficeBlock::setIntern(Intern* intern) {
     intern_ = intern;
@@ -99,6 +98,11 @@ void    OfficeBlock::doBureaucracy(
     }
     Form *aform = intern_->makeForm(form_name, target_name);
     if (!aform) {
+        std::cout
+            << Constants::kTextWarning
+            << "[" << this <<"] "
+            << "an idiot intern has mistaken his printing job."
+            << Constants::kTextReset << std::endl;
         return;
     }
     signer_->signForm(*aform);

@@ -66,15 +66,20 @@ int main() {
         say("[ push to cb1 ]");
         cb1.queueUp("42Tokyo");
         cb1.queueUp("yokawada");
+        cb1.queueUp("mr");
+        cb1.queueUp("hige");
+        cb1.queueUp("ureshinokun");
 
         say("[ push to cb3 ]");
-        cb3.queueUp("yoyo");
+        cb3.queueUp("yo");
+        cb3.queueUp("ohizumi");
 
         say("[ cb1 = cb1 ]");
         cb1 = cb1;
 
         say("[ cb3 = cb1 ]");
         cb3 = cb1;
+
 
         say("[ fulfill cb1 ]");
         for (std::size_t i = 0; i < (N + 5); i += 1) {

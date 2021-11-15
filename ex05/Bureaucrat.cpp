@@ -1,5 +1,4 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat():
     name_("<nameless>"), grade_(Bureaucrat::kLowestGrade)

@@ -24,10 +24,20 @@ Intern::~Intern() {
 
 Intern::Intern(const Intern &from) {
     (void)from;
+    std::cout
+        << Constants::kTextError
+        << "[" << this << "] "
+        << "copy of Intern is wrong"
+        << Constants::kTextReset << std::endl;
 }
 
 Intern& Intern::operator=(const Intern &rhs) {
     (void)rhs;
+    std::cout
+        << Constants::kTextError
+        << "[" << this << "] "
+        << "assignation of Intern is wrong"
+        << Constants::kTextReset << std::endl;
     return *this;
 }
 

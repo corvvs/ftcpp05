@@ -1,5 +1,5 @@
 CXX			:=	clang++
-CXXFLAGS	:=	
+CXXFLAGS	:=	-g
 #-Wall -Wextra -Werror -std=c++98 --pedantic
 NAME		:=	exe
 SRCS		:=	main.cpp \
