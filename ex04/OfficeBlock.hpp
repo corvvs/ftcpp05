@@ -1,6 +1,7 @@
 #ifndef CPP05_EX04_OFFICEBLOCK_HPP_
 # define CPP05_EX04_OFFICEBLOCK_HPP_
 
+# include <iostream>
 # include "Bureaucrat.hpp"
 # include "Intern.hpp"
 

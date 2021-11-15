@@ -11,6 +11,7 @@ class Bureaucrat;
 
 class Form {
     public:
+
         class GradeTooHighException: public std::runtime_error {
             public:
                 GradeTooHighException(const char *_message);
@@ -28,7 +29,7 @@ class Form {
             int min_grade_to_sign,
             int min_grade_to_execute
         );
-        ~Form();
+        virtual ~Form();
         Form(const Form &from);
         Form& operator=(const Form &rhs);
 
@@ -53,5 +54,7 @@ class Form {
 };
 
 std::ostream& operator<<(std::ostream& stream, const Form& value);
+
+# include "Bureaucrat.hpp"
 
 #endif

@@ -1,8 +1,14 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat():
-    name_("<nameless>"), grade_(Bureaucrat::kLowestGrade) {}
+    name_("<nameless>"), grade_(Bureaucrat::kLowestGrade)
+{
+    std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "a nameless Bureaucrat has arrived in lowest grade"
+        << Constants::kTextReset << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade):
     name_(name)

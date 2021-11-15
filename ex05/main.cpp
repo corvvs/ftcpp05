@@ -74,8 +74,8 @@ int main() {
         cb3.queueUp("yo");
         cb3.queueUp("ohizumi");
 
-        say("[ cb1 = cb1 ]");
-        cb1 = cb1;
+        // say("[ cb1 = cb1 ]");
+        // cb1 = cb1; // error: explicitly assigning value of variable of type 'CentralBureaucracy' to itself [-Werror,-Wself-assign-overloaded]
 
         say("[ cb3 = cb1 ]");
         cb3 = cb1;

@@ -1,8 +1,14 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat():
-    name_("<nameless>"),
-    grade_(Bureaucrat::kLowestGrade) {}
+    name_("<nameless>"), grade_(Bureaucrat::kLowestGrade)
+{
+    std::cout
+        << Constants::kTextLifeCycle
+        << "[" << this << "] "
+        << "a nameless Bureaucrat has arrived in lowest grade"
+        << Constants::kTextReset << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade):
     name_(name)
@@ -62,6 +68,7 @@ void                Bureaucrat::incrementGrade(void) {
     grade_ -= 1;
     std::cout
         << Constants::kTextInfo
+        << "[" << this << "] "
         << "a Bureaucrat <" << name_ << "> has gotten its grade higher: " << grade_
         << Constants::kTextReset << std::endl;
 }
@@ -71,6 +78,7 @@ void                Bureaucrat::decrementGrade(void) {
     grade_ += 1;
     std::cout
         << Constants::kTextInfo
+        << "[" << this << "] "
         << "a Bureaucrat <" << name_ << "> has gotten its grade lower: " << grade_
         << Constants::kTextReset << std::endl;
 }

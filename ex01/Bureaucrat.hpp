@@ -48,4 +48,6 @@ class Bureaucrat {
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& value);
 
+# include "Form.hpp"
+
 #endif

@@ -1,5 +1,4 @@
 #include "Form.hpp"
-#include "Bureaucrat.hpp"
 
 Form::Form():
     name_("<nameless>"),

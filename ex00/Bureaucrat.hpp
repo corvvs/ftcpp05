@@ -40,7 +40,7 @@ class Bureaucrat {
         const std::string   name_;
         int                 grade_;
 
-        static void     assertGradeIsInRange(int grade);
+        static void         assertGradeIsInRange(int grade);
 };
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& value);

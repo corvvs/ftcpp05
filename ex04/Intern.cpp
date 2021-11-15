@@ -24,23 +24,39 @@ Intern::~Intern() {
 
 Intern::Intern(const Intern &from) {
     (void)from;
+    std::cout
+        << Constants::kTextError
+        << "[" << this << "] "
+        << "copy of Intern is useless"
+        << Constants::kTextReset << std::endl;
 }
 
 Intern& Intern::operator=(const Intern &rhs) {
     (void)rhs;
+    std::cout
+        << Constants::kTextError
+        << "[" << this << "] "
+        << "assignation of Intern is useless"
+        << Constants::kTextReset << std::endl;
     return *this;
 }
+
+
+std::size_t  Intern::IndexForFormName(std::string form_name) {
+    std::size_t i = 0;
+    while (i < Intern::kConcreteFormNum && form_name != Intern::kConcreteFormNames[i]) {
+        i += 1;
+    }
+    return i;
+}
+
 
 Form*   Intern::makeForm(
     std::string form_name,
     std::string target_name
 ) const {
-    std::size_t i = 0;
-    while (i < Intern::kConcreteFormNum && form_name != Intern::kConcreteFormNames[i]) {
-        i += 1;
-    }
     Form *concrete = NULL;
-    switch (i) {
+    switch (Intern::IndexForFormName(form_name)) {
         case 0:
             concrete = new ShrubberyCreationForm(target_name);
             break;

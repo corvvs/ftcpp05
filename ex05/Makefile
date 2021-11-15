@@ -1,6 +1,6 @@
 CXX			:=	clang++
-CXXFLAGS	:=	-g
-#-Wall -Wextra -Werror -std=c++98 --pedantic
+CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98 --pedantic
+# CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98 --pedantic -D COLORLESS=1
 NAME		:=	exe
 SRCS		:=	main.cpp \
 				Bureaucrat.cpp BureaucratExceptions.cpp \

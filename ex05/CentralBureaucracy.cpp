@@ -107,10 +107,20 @@ void    CentralBureaucracy::doBureaucracy(void) {
     target_queue_ = target_queue_->getNext();
     head->setNext(NULL);
 
+    std::cout
+        << Constants::kTextInfo
+        << "[" << this << "] "
+        << "doBureaucracy for " << head->getStr() << ""
+        << Constants::kTextReset << std::endl;
     for (std::size_t i = 0; i < CentralBureaucracy::kOfficeBlockNumber; i += 1) {
-        Intern dust;
+        std::cout
+            << Constants::kTextInfo
+            << "[" << this << "] "
+            << "<<" << i << ">>"
+            << Constants::kTextReset << std::endl;
         std::string form_name
             = Intern::kConcreteFormNames[std::rand() % Intern::kConcreteFormNum];
+        Intern dust;
         office_blocks_[i].setIntern(&dust);
         office_blocks_[i].doBureaucracy(form_name, head->getStr());
         office_blocks_[i].setIntern(NULL);

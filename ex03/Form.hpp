@@ -71,4 +71,6 @@ class Form {
 
 std::ostream& operator<<(std::ostream& stream, const Form& value);
 
+# include "Bureaucrat.hpp"
+
 #endif
