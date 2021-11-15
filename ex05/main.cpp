@@ -55,8 +55,9 @@ int main() {
         Bureaucrat *crats[N];
         for (std::size_t i = 0; i < N; i += 1) {
             std::stringstream ss;
-            ss << "yo" << i + 1;
-            crats[i] = new Bureaucrat(ss.str(), i * 7 + 1);
+            int grade = i * 7 + 1;
+            ss << "yo" << grade;
+            crats[i] = new Bureaucrat(ss.str(), grade);
             cb1.feedBureaucrat(*crats[i]);
         }
 
