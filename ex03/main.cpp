@@ -96,4 +96,7 @@ int main() {
     test(*fp, crat1);
 
     say("[ Finish ]");
+    delete fs;
+    delete fr;
+    delete fp;
 }
