@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat():
         << Constants::kTextReset << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade):
+Bureaucrat::Bureaucrat(const std::string name, int grade):
     name_(name)
 {
     Bureaucrat::assertGradeIsInRange(grade);
@@ -46,7 +46,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &rhs) {
     return *this;
 }
 
-void     Bureaucrat::assertGradeIsInRange(int grade) {
+void    Bureaucrat::assertGradeIsInRange(int grade) {
     if (grade < Bureaucrat::kHighestGrade) {
         throw Bureaucrat::GradeTooHighException("high");
     }

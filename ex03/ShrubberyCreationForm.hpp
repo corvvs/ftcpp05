@@ -8,7 +8,7 @@
 
 class ShrubberyCreationForm: public Form {
     public:
-        ShrubberyCreationForm(std::string target = "");
+        ShrubberyCreationForm(const std::string target = "");
         virtual ~ShrubberyCreationForm();
         ShrubberyCreationForm(const ShrubberyCreationForm &from);
         ShrubberyCreationForm&  operator=(const ShrubberyCreationForm &rhs);

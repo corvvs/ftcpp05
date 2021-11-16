@@ -7,7 +7,7 @@
 
 class PresidentialPardonForm: public Form {
     public:
-        PresidentialPardonForm(std::string target = "");
+        PresidentialPardonForm(const std::string target = "");
         virtual ~PresidentialPardonForm();
         PresidentialPardonForm(const PresidentialPardonForm &from);
         PresidentialPardonForm&  operator=(const PresidentialPardonForm &rhs);

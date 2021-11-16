@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat():
         << Constants::kTextReset << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade):
+Bureaucrat::Bureaucrat(const std::string name, int grade):
     name_(name)
 {
     Bureaucrat::assertGradeIsInRange(grade);

@@ -43,7 +43,7 @@ class Form {
     protected:
         Form();
         Form(
-            std::string name,
+            const std::string name,
             int min_grade_to_sign,
             int min_grade_to_execute
         );

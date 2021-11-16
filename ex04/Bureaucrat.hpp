@@ -33,7 +33,7 @@ class Bureaucrat {
         };
 
         Bureaucrat();
-        Bureaucrat(std::string name, int grade);
+        Bureaucrat(const std::string name, int grade);
         ~Bureaucrat();
         Bureaucrat(const Bureaucrat &from);
         Bureaucrat& operator=(const Bureaucrat &rhs);

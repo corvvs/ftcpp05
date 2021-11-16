@@ -1,7 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target):
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target):
     Form("ShrubberyCreation", ShrubberyCreationForm::kMinGradeToSign, ShrubberyCreationForm::kMinGradeToExecute),
     target_(target.length() > 0 ? target : "<unknown>") {}
 

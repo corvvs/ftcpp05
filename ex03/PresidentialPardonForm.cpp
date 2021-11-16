@@ -1,7 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target):
+PresidentialPardonForm::PresidentialPardonForm(const std::string target):
     Form("PresidentialPardon", PresidentialPardonForm::kMinGradeToSign, PresidentialPardonForm::kMinGradeToExecute),
     target_(target.length() > 0 ? target : "<unknown>") {}
 
