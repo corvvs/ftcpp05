@@ -19,9 +19,21 @@ template<class ConcreteForm> void  test(
     std::cout << form << std::endl;
     std::cout << copied_form << std::endl;
 
-    crat.executeForm(copied_form);
-    crat.signForm(copied_form);
-    crat.executeForm(copied_form);
+    try {
+        crat.executeForm(copied_form);
+    } catch (std::exception& e) {
+        std::cout << Constants::kTextError << e.what() << Constants::kTextReset << std::endl;
+    }
+    try {
+        crat.signForm(copied_form);
+    } catch (std::exception& e) {
+        std::cout << Constants::kTextError << e.what() << Constants::kTextReset << std::endl;
+    }
+    try {
+        crat.executeForm(copied_form);
+    } catch (std::exception& e) {
+        std::cout << Constants::kTextError << e.what() << Constants::kTextReset << std::endl;
+    }
 
     std::cout << form << std::endl;
     std::cout << copied_form << std::endl;

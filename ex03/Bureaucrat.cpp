@@ -46,7 +46,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &rhs) {
     return *this;
 }
 
-void     Bureaucrat::assertGradeIsInRange(int grade) {
+void    Bureaucrat::assertGradeIsInRange(int grade) {
     if (grade < Bureaucrat::kHighestGrade) {
         throw Bureaucrat::GradeTooHighException("high");
     }
@@ -100,6 +100,7 @@ void                Bureaucrat::signForm(Form& form) const {
             << form.getName() << "[" << &form << "]"
             << ", with reason: <" << e.what() << ">"
             << Constants::kTextReset << std::endl;
+        throw Bureaucrat::FailedToSignException("fail");
     } 
 }
 
@@ -120,6 +121,7 @@ void                Bureaucrat::executeForm(Form const & form) {
             << form.getName() << "[" << &form << "]"
             << ", with reason: <" << e.what() << ">"
             << Constants::kTextReset << std::endl;
+        throw Bureaucrat::FailedToExecuteException("fail");
     } 
 }
 std::ostream&   operator<<(std::ostream& stream, const Bureaucrat& value) {

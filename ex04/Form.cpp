@@ -31,9 +31,9 @@ Form::Form(
     std::cout
         << Constants::kTextLifeCycle
         << "[" << this << "] "
-        << "a Form <" << name_ <<
-        "> requires "<< min_grade_to_sign_ << " to sign, " <<
-        "and also requires " << min_grade_to_execute_ << " to execute"
+        << "a Form <" << name_
+        << "> requires "<< min_grade_to_sign_ << " to sign, "
+        << "and also requires " << min_grade_to_execute_ << " to execute"
         << Constants::kTextReset << std::endl;
 }
 
@@ -95,7 +95,7 @@ int                 Form::getMinGradeToExecute(void) const {
     return min_grade_to_execute_;
 }
 
-void    Form::beSigned(const Bureaucrat& signer) {
+void                Form::beSigned(const Bureaucrat& signer) {
     if (signer.getGrade() > min_grade_to_sign_) {
         throw Form::GradeTooLowException("low");
     }
@@ -117,7 +117,7 @@ void                Form::setIsSigned(bool is_signed) {
     }
 }
 
-void    Form::assertIsExecutable(Bureaucrat const & executor) const {
+void                Form::assertIsExecutable(Bureaucrat const & executor) const {
     if (!getIsSigned()) {
         throw Form::ExecuteWithoutSignedException("unsigned");
     }

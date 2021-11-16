@@ -68,7 +68,7 @@ Form*   Intern::makeForm(
             break;
         default:
             std::cout
-                << Constants::kTextWarning
+                << Constants::kTextError
                 << "[" << this << "] "
                 << "A blank-eyed intern said: <" << form_name << ">? That's good idea..."
                 << Constants::kTextReset << std::endl;

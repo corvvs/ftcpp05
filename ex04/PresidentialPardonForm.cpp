@@ -3,7 +3,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target):
     Form("PresidentialPardon", PresidentialPardonForm::kMinGradeToSign, PresidentialPardonForm::kMinGradeToExecute),
-    target_(target.length() > 0 ? target : "") {}
+    target_(target.length() > 0 ? target : "<unknown>") {}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
