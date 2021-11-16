@@ -9,7 +9,7 @@ SRCS		:=	main.cpp \
 				RobotomyRequestForm.cpp \
 				PresidentialPardonForm.cpp \
 				Intern.cpp \
-				OfficeBlock.cpp \
+				OfficeBlock.cpp OfficeBlockExceptions.cpp \
 				StringList.cpp \
 				CentralBureaucracy.cpp
 

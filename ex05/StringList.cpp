@@ -40,11 +40,11 @@ StringList::StringList(const StringList &from):
             to_head->next_ = new StringList(from_head->next_->str_);
             to_head = to_head->next_;
             from_head = from_head->next_;
-            i += 2;
+            i += 1;
         }
-    } catch (std::bad_alloc& e) {
+    } catch (std::exception& e) {
         delete this->next_;
-        throw e;
+        throw;
     }
 }
 

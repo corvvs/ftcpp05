@@ -3,7 +3,7 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target):
     Form("RobotomyRequest", RobotomyRequestForm::kMinGradeToSign, RobotomyRequestForm::kMinGradeToExecute),
-    target_(target.length() > 0 ? target : "") {}
+    target_(target.length() > 0 ? target : "<unknown>") {}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 

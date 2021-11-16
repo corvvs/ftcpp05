@@ -116,13 +116,17 @@ void    CentralBureaucracy::doBureaucracy(void) {
         std::cout
             << Constants::kTextInfo
             << "[" << this << "] "
-            << "<<" << i << ">>"
+            << "<< Block #" << i << " >>"
             << Constants::kTextReset << std::endl;
         std::string form_name
             = Intern::kConcreteFormNames[std::rand() % Intern::kConcreteFormNum];
         Intern dust;
         office_blocks_[i].setIntern(&dust);
-        office_blocks_[i].doBureaucracy(form_name, head->getStr());
+        try {
+            office_blocks_[i].doBureaucracy(form_name, head->getStr());
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         office_blocks_[i].setIntern(NULL);
     }
     delete head;

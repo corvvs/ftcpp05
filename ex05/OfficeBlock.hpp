@@ -4,6 +4,9 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 # include "Intern.hpp"
+# include "Constants.hpp"
+# include <exception>
+# include <stdexcept>
 
 class OfficeBlock {
     public:
@@ -14,6 +17,17 @@ class OfficeBlock {
             Bureaucrat* executor
         );
         ~OfficeBlock();
+
+        class IncompleteBlockException: public std::runtime_error {
+            public:
+                IncompleteBlockException(const char *_message);
+                const char* what() const _NOEXCEPT;
+        };
+        class UnknownFormException: public std::runtime_error {
+            public:
+                UnknownFormException(const char *_message);
+                const char* what() const _NOEXCEPT;
+        };
 
         const Intern*       getIntern(void) const;
         const Bureaucrat*   getSigner(void) const;
