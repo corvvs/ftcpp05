@@ -7,6 +7,20 @@ void    say(const std::string& str) {
     std::cout << std::endl << str << std::endl << std::endl;
 }
 
+void    test(
+    Bureaucrat& signer,
+    Form& form
+) {
+    try {
+        signer.signForm(form);
+    } catch (std::exception& e) {
+    std::cout
+        << Constants::kTextError
+        << e.what()
+        << Constants::kTextReset << std::endl;
+    }
+}
+
 int main() {
     try {
         say("[ Fail by Too High To Sign]");
@@ -67,27 +81,27 @@ int main() {
         say("[ Sign. ]");
         say("[ yo150: success, fail, fail ]");
         for (int j = 0; j < 3; j += 1) {
-            signer150.signForm(forms[j]);
+            test(signer150, forms[j]);
         }
         say("[ yo101: success, fail, fail ]");
         for (int j = 0; j < 3; j += 1) {
-            signer101.signForm(forms[j]);
+            test(signer101, forms[j]);
         }
         say("[ yo100: success, success, fail ]");
         for (int j = 0; j < 3; j += 1) {
-            signer100.signForm(forms[j]);
+            test(signer100, forms[j]);
         }
         say("[ yo99: success, success, fail ]");
         for (int j = 0; j < 3; j += 1) {
-            signer99.signForm(forms[j]);
+            test(signer99, forms[j]);
         }
         say("[ yo2: success, success, fail ]");
         for (int j = 0; j < 3; j += 1) {
-            signer2.signForm(forms[j]);
+            test(signer2, forms[j]);
         }
         say("[ yo1: success, success, success ]");
         for (int j = 0; j < 3; j += 1) {
-            signer1.signForm(forms[j]);
+            test(signer1, forms[j]);
         }
     } catch (std::exception& e) {
         std::cout

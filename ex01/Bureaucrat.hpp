@@ -21,6 +21,11 @@ class Bureaucrat {
                 GradeTooLowException(const char *_message);
                 const char* what() const _NOEXCEPT;
         };
+        class FailedToSignException: public std::runtime_error {
+            public:
+                FailedToSignException(const char *_message);
+                const char* what() const _NOEXCEPT;
+        };
 
         Bureaucrat();
         Bureaucrat(std::string name, int grade);

@@ -100,6 +100,7 @@ void                Bureaucrat::signForm(Form& form) const {
             << form.getName() << "[" << &form << "]"
             << ", with reason: <" << e.what() << ">"
             << Constants::kTextReset << std::endl;
+        throw Bureaucrat::FailedToSignException("fail");
     } 
 }
 
