@@ -38,8 +38,8 @@ class OfficeBlock {
         void                setExecutor(Bureaucrat* crat);
 
         void                doBureaucracy(
-            std::string form_name,
-            std::string target_name
+            const std::string form_name,
+            const std::string target_name
         );
 
     private:

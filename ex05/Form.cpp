@@ -7,7 +7,7 @@ Form::Form():
     min_grade_to_execute_(Form::kLowestGrade) {}
 
 Form::Form(
-    std::string name,
+    const std::string name,
     int min_grade_to_sign,
     int min_grade_to_execute
 ):

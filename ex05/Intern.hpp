@@ -18,11 +18,11 @@ class   Intern {
         static const std::size_t kConcreteFormNum = 3;
         static const std::string kConcreteFormNames[kConcreteFormNum];
 
-        static std::size_t  IndexForFormName(std::string form_name);
+        static std::size_t  IndexForFormName(const std::string form_name);
 
         Form*   makeForm(
-            std::string form_name,
-            std::string target_name
+            const std::string form_name,
+            const std::string target_name
         ) const;
 };
 

@@ -72,7 +72,7 @@ bool    CentralBureaucracy::feedBureaucrat(Bureaucrat& crat) {
     return false;
 }
 
-void    CentralBureaucracy::queueUp(std::string target_name) {
+void    CentralBureaucracy::queueUp(const std::string target_name) {
     if (target_queue_) {
         StringList* head = target_queue_;
         while (head->getNext()) {

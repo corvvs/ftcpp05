@@ -41,8 +41,7 @@ Intern& Intern::operator=(const Intern &rhs) {
     return *this;
 }
 
-
-std::size_t  Intern::IndexForFormName(std::string form_name) {
+std::size_t  Intern::IndexForFormName(const std::string form_name) {
     std::size_t i = 0;
     while (i < Intern::kConcreteFormNum && form_name != Intern::kConcreteFormNames[i]) {
         i += 1;
@@ -50,10 +49,9 @@ std::size_t  Intern::IndexForFormName(std::string form_name) {
     return i;
 }
 
-
 Form*   Intern::makeForm(
-    std::string form_name,
-    std::string target_name
+    const std::string form_name,
+    const std::string target_name
 ) const {
     Form *concrete = NULL;
     switch (Intern::IndexForFormName(form_name)) {

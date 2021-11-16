@@ -85,8 +85,8 @@ void                OfficeBlock::setExecutor(Bureaucrat* crat) {
 }
 
 void    OfficeBlock::doBureaucracy(
-    std::string form_name,
-    std::string target_name
+    const std::string form_name,
+    const std::string target_name
 ) {
     if (!intern_ || !signer_ || !executor_) {
         std::cout

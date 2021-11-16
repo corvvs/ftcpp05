@@ -1,7 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target):
+RobotomyRequestForm::RobotomyRequestForm(const std::string target):
     Form("RobotomyRequest", RobotomyRequestForm::kMinGradeToSign, RobotomyRequestForm::kMinGradeToExecute),
     target_(target.length() > 0 ? target : "<unknown>") {}
 

@@ -20,7 +20,7 @@ class CentralBureaucracy {
         static const std::size_t    kOfficeBlockNumber = 20;
 
         bool    feedBureaucrat(Bureaucrat& crat);
-        void    queueUp(std::string target_name);
+        void    queueUp(const std::string target_name);
         void    doBureaucracy(void);
 
         const OfficeBlock*  getOfficeBlocks(void) const;
