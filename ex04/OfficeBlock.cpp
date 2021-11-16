@@ -94,7 +94,7 @@ void    OfficeBlock::doBureaucracy(
             << "[" << this <<"] "
             << "The OfficeBlock is incomplete"
             << Constants::kTextReset << std::endl;
-        return;
+        throw OfficeBlock::IncompleteBlockException("blank");
     }
     Form *aform = intern_->makeForm(form_name, target_name);
     if (!aform) {
@@ -103,9 +103,14 @@ void    OfficeBlock::doBureaucracy(
             << "[" << this <<"] "
             << "an idiot intern has mistaken his printing job."
             << Constants::kTextReset << std::endl;
-        return;
+        throw OfficeBlock::UnknownFormException("unknown");
     }
-    signer_->signForm(*aform);
-    executor_->executeForm(*aform);
+    try {
+        signer_->signForm(*aform);
+        executor_->executeForm(*aform);
+    } catch (...) {
+        delete aform;
+        throw;
+    }
     delete aform;
 }

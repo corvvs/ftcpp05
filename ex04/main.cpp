@@ -26,13 +26,29 @@ void  test(
             &signer,
             &executor
         );
-        ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Shrubbery, 145 to sign, 137 to exec ** ]");
-        ob.doBureaucracy("ShrubberyCreationForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("ShrubberyCreationForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Robotomy, 72 to sign, 45 to exec ** ]");
-        ob.doBureaucracy("RobotomyRequestForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("RobotomyRequestForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Pardon, 25 to sign, 5 to exec ** ]");
-        ob.doBureaucracy("PresidentialPardonForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("PresidentialPardonForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
     } catch (std::exception& e) {
         std::cout
             << Constants::kTextWarning
@@ -64,7 +80,6 @@ int main() {
     test(it3, crat1, crat50);
     test(it3, crat50, crat1);
 
-
     try {
         say("[ Blank Test ]");
         OfficeBlock ob;
@@ -72,13 +87,29 @@ int main() {
         OfficeBlock ob3;
         // ob3 = ob; // error: 'operator=' is a private member of 'OfficeBlock'
 
-        ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Shrubbery, 145 to sign, 137 to exec ** ]");
-        ob.doBureaucracy("ShrubberyCreationForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("ShrubberyCreationForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Robotomy, 72 to sign, 45 to exec ** ]");
-        ob.doBureaucracy("RobotomyRequestForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("RobotomyRequestForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Pardon, 25 to sign, 5 to exec ** ]");
-        ob.doBureaucracy("PresidentialPardonForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("PresidentialPardonForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
 
         say("[ Fill Test ]");
         std::cout
@@ -95,13 +126,29 @@ int main() {
             << ob.getExecutor()
             << std::endl;
 
-        ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("FlameThrowingForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Shrubbery, 145 to sign, 137 to exec ** ]");
-        ob.doBureaucracy("ShrubberyCreationForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("ShrubberyCreationForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Robotomy, 72 to sign, 45 to exec ** ]");
-        ob.doBureaucracy("RobotomyRequestForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("RobotomyRequestForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
         say("[ ** Pardon, 25 to sign, 5 to exec ** ]");
-        ob.doBureaucracy("PresidentialPardonForm", "42Tokyo");
+        try {
+            ob.doBureaucracy("PresidentialPardonForm", "42Tokyo");
+        } catch (std::exception& e) {
+            std::cout << Constants::kTextWarning << e.what() << Constants::kTextReset << std::endl;
+        }
     } catch (std::exception& e) {
         std::cout
             << Constants::kTextWarning

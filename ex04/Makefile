@@ -8,7 +8,7 @@ SRCS		:=	main.cpp \
 				RobotomyRequestForm.cpp \
 				PresidentialPardonForm.cpp \
 				Intern.cpp \
-				OfficeBlock.cpp
+				OfficeBlock.cpp OfficeBlockExceptions.cpp
 
 OBJS		:=	$(SRCS:.cpp=.o)
 
