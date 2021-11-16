@@ -23,9 +23,9 @@ Form::Form(
     std::cout
         << Constants::kTextLifeCycle
         << "[" << this << "] "
-        << "a Form <" << name_ <<
-        "> requires "<< min_grade_to_sign_ << " to sign, " <<
-        "and also requires " << min_grade_to_execute_ << " to execute"
+        << "a Form <" << name_
+        << "> requires "<< min_grade_to_sign_ << " to sign, "
+        << "and also requires " << min_grade_to_execute_ << " to execute"
         << Constants::kTextReset << std::endl;
 }
 
