@@ -3,7 +3,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):
     Form("ShrubberyCreation", ShrubberyCreationForm::kMinGradeToSign, ShrubberyCreationForm::kMinGradeToExecute),
-    target_(target.length() > 0 ? target : "") {}
+    target_(target.length() > 0 ? target : "<unknown>") {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
